@@ -1,6 +1,6 @@
 # 麻辣烫官方插件与市场
 
-[独立官方仓库](https://github.com/semicoder-dev/malatang-plugins)，宿主不携带此处任何插件。翻译和随手记 0.1.0 已发布归档并上架，市场适用于麻辣烫 0.4.2。
+[独立官方仓库](https://github.com/semicoder-dev/malatang-plugins)，宿主不携带此处任何插件。翻译和随手记 0.1.1 已发布归档并上架，使用固定公开 SDK 0.3.2，manifest 保持 0.3。组织市场由麻辣烫 0.4.3 默认使用；完整应用验收见宿主发布记录。
 
 - `plugins/translate`：译文，使用宿主模型翻译。
 - `plugins/quick-notes`：随手记，使用宿主 KV 存储。
@@ -35,7 +35,15 @@ bun run index:check
 
 市场 v1 契约：顶层 `schemaVersion:1/name/plugins`；每项 `id/packageName/name/description/icon/color/version/sdkVersion/url/sha256`。版本为稳定 `x.y.z`，每个 ID 仅一个版本；URL 为 HTTPS 预构建归档，SHA-256 为实际归档的 64 位小写十六进制。包名、ID、版本和 SDK 必须与归档一致，后端入口不作为浏览器资源公开。
 
-## 首次上线证据（2026-10-11）
+## 组织首次发行（2026-10-11）
+
+源码 `a6a949134703b6c88d43641261888bd75a1a5d97`。翻译 [工作流 38117624321](https://github.com/semicoder-dev/malatang-plugins/actions/runs/38117624321)、随手记 [工作流 38117627294](https://github.com/semicoder-dev/malatang-plugins/actions/runs/38117627294) 成功；公开归档的 SHA-256、包身份、版本和预构建文件经独立下载验收。固定 SDK 0.3.2 已先完成 npm OIDC 与公开归档验收。
+
+- [翻译 0.1.1](https://github.com/semicoder-dev/malatang-plugins/releases/tag/translate-v0.1.1)：SHA-256 `d42181bd290f938170dd7209dd6358f731017c6ac5e05cafaa4262e706a45077`。
+- [随手记 0.1.1](https://github.com/semicoder-dev/malatang-plugins/releases/tag/quick-notes-v0.1.1)：SHA-256 `fcfd8422211093d17fa9cdcc7ced2a06785cc93bcea28337ee9c877b41916da6`。
+- 索引 PR [#5](https://github.com/semicoder-dev/malatang-plugins/pull/5) / [#6](https://github.com/semicoder-dev/malatang-plugins/pull/6) 经 CI 后合并，固定索引提交 `050e08736bed8462b6c4881bde63d4625ceb640d`；公开 Raw 返回两个 0.1.1 条目。旧标签与归档保持不变。
+
+## 首次上线证据（2026-10-11，历史）
 
 - 翻译 [translate-v0.1.0](https://github.com/semicoder-dev/malatang-plugins/releases/tag/translate-v0.1.0)，源码 `1d65444`，SHA-256 `47f1ca96ba81a367944c4f01823e25dd960f3465d18f056e6573def05ac8d833`。
 - 随手记 [quick-notes-v0.1.0](https://github.com/semicoder-dev/malatang-plugins/releases/tag/quick-notes-v0.1.0)，源码 `a377f30`，SHA-256 `14b55f3722be87a3674cb7bdf0c41408cd8fbe1808de57cdf8dfc6d329cb56e0`。
