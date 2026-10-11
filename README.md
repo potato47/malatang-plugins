@@ -1,10 +1,10 @@
 # 麻辣烫官方插件与市场
 
-[独立官方仓库](https://github.com/potato47/malatang-plugins)，宿主不携带此处任何插件。翻译和随手记 0.1.0 已发布归档并上架，市场适用于麻辣烫 0.4.2。
+[独立官方仓库](https://github.com/semicoder-dev/malatang-plugins)，宿主不携带此处任何插件。翻译和随手记 0.1.0 已发布归档并上架，市场适用于麻辣烫 0.4.2。
 
 - `plugins/translate`：译文，使用宿主模型翻译。
 - `plugins/quick-notes`：随手记，使用宿主 KV 存储。
-- `marketplace.json`：仅列已发布并验收的插件。默认索引为 https://raw.githubusercontent.com/potato47/malatang-plugins/main/marketplace.json 。
+- `marketplace.json`：仅列已发布并验收的插件。默认索引为 https://raw.githubusercontent.com/semicoder-dev/malatang-plugins/main/marketplace.json 。
 - `scripts/tasks.ts`：通过固定的公开 SDK 0.3.0 检查、构建和打包，产生归档、SHA-256 与候选条目。
 - `tests/translate-models.html`：迁入的离线浏览器回归；通过 `bun scripts/browser-fixture.ts` 生成 `artifacts/browser/index.html`，直接用浏览器打开（无需额外服务），覆盖模型选择、空模型与账号断开；不发送真实模型请求。
 
@@ -37,7 +37,7 @@ bun run index:check
 
 ## 首次上线证据（2026-10-11）
 
-- 翻译 [translate-v0.1.0](https://github.com/potato47/malatang-plugins/releases/tag/translate-v0.1.0)，源码 `1d65444`，SHA-256 `47f1ca96ba81a367944c4f01823e25dd960f3465d18f056e6573def05ac8d833`。
-- 随手记 [quick-notes-v0.1.0](https://github.com/potato47/malatang-plugins/releases/tag/quick-notes-v0.1.0)，源码 `a377f30`，SHA-256 `14b55f3722be87a3674cb7bdf0c41408cd8fbe1808de57cdf8dfc6d329cb56e0`。
-- 两个归档经匿名下载、包身份和哈希验收；索引 PR [#1](https://github.com/potato47/malatang-plugins/pull/1)、[#2](https://github.com/potato47/malatang-plugins/pull/2) 经 CI 后合并，公开 Raw 索引已返回两条记录。
+- 翻译 [translate-v0.1.0](https://github.com/semicoder-dev/malatang-plugins/releases/tag/translate-v0.1.0)，源码 `1d65444`，SHA-256 `47f1ca96ba81a367944c4f01823e25dd960f3465d18f056e6573def05ac8d833`。
+- 随手记 [quick-notes-v0.1.0](https://github.com/semicoder-dev/malatang-plugins/releases/tag/quick-notes-v0.1.0)，源码 `a377f30`，SHA-256 `14b55f3722be87a3674cb7bdf0c41408cd8fbe1808de57cdf8dfc6d329cb56e0`。
+- 两个归档经匿名下载、包身份和哈希验收；索引 PR [#1](https://github.com/semicoder-dev/malatang-plugins/pull/1)、[#2](https://github.com/semicoder-dev/malatang-plugins/pull/2) 经 CI 后合并，公开 Raw 索引已返回两条记录。
 - 首次翻译流程在归档发布后因 Actions 无 PR 创建权限而报错；维护者补建 PR，标签与归档未移动。工作流此后保留候选分支并明确提示手工补建 PR，仓库保护未放宽。
