@@ -46,4 +46,7 @@ jobs:
           git add marketplace.json
           git commit -m "market: publish $RELEASE_TAG"
           git push origin "catalog/$RELEASE_TAG"
-          gh pr create --base main --head "catalog/$RELEASE_TAG" --title "market: publish $RELEASE_TAG" --body '公开固定归档的 SHA-256 验收通过。合并后官方市场才能发现该版本。'
+          if ! gh pr create --base main --head "catalog/$RELEASE_TAG" --title "market: publish $RELEASE_TAG" --body '公开固定归档的 SHA-256 验收通过。合并后官方市场才能发现该版本。'; then
+            echo '::warning::归档与索引候选已发布；仓库禁止 Actions 创建 PR 时，由维护者从 catalog 分支创建并验收 PR。不要重发同版本。'
+            echo "索引尚未上架：请从 catalog/$RELEASE_TAG 向 main 创建 PR，执行 CI 后合并。" >> "$GITHUB_STEP_SUMMARY"
+          fi
