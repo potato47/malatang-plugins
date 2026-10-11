@@ -21,10 +21,10 @@
       "description": "让意思抵达，让表达自然。一个轻巧的 AI 翻译工作台。",
       "icon": "文",
       "color": "#cf633c",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "sdkVersion": "0.3",
-      "url": "https://github.com/semicoder-dev/malatang-plugins/releases/download/translate-v0.1.0/translate-0.1.0.tgz",
-      "sha256": "47f1ca96ba81a367944c4f01823e25dd960f3465d18f056e6573def05ac8d833"
+      "url": "https://github.com/semicoder-dev/malatang-plugins/releases/download/translate-v0.1.1/translate-0.1.1.tgz",
+      "sha256": "d42181bd290f938170dd7209dd6358f731017c6ac5e05cafaa4262e706a45077"
     }
   ]
 }
