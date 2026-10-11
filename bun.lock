@@ -5,7 +5,7 @@
     "": {
       "name": "malatang-plugins",
       "devDependencies": {
-        "@semicoder/malatang-sdk": "0.3.0",
+        "@semicoder/malatang-sdk": "0.3.2",
         "@types/bun": "1.4.0",
         "@types/react": "19.2.17",
         "@types/react-dom": "19.2.3",
@@ -17,16 +17,16 @@
     },
     "plugins/quick-notes": {
       "name": "@semicoder/malatang-example-quick-notes",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "devDependencies": {
-        "@semicoder/malatang-sdk": "0.3.0",
+        "@semicoder/malatang-sdk": "0.3.2",
       },
     },
     "plugins/translate": {
       "name": "@semicoder/malatang-plugin-translate",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "devDependencies": {
-        "@semicoder/malatang-sdk": "0.3.0",
+        "@semicoder/malatang-sdk": "0.3.2",
       },
     },
   },
@@ -165,7 +165,7 @@
 
     "@semicoder/malatang-plugin-translate": ["@semicoder/malatang-plugin-translate@workspace:plugins/translate"],
 
-    "@semicoder/malatang-sdk": ["@semicoder/malatang-sdk@0.3.0", "", { "dependencies": { "@base-ui/react": "^1.9.0", "@tailwindcss/postcss": "^4.3.3", "lucide-react": "^1.55.0", "postcss": "^8.5.28", "postcss-selector-parser": "^7.1.6", "postcss-value-parser": "^4.2.0", "tailwindcss": "^4.3.3", "zod": "4.6.5" }, "peerDependencies": { "react": ">=19 <20", "react-dom": ">=19 <20" } }, "sha512-FDgiz9qXeu1ifaY7dJFwhJkxpXEoCRk7H4hItMWRi5fRBhCk2/cZgILc8z1wS5cM8KpOlCTXQ3o6dv2apII4hw=="],
+    "@semicoder/malatang-sdk": ["@semicoder/malatang-sdk@0.3.2", "", { "dependencies": { "@base-ui/react": "^1.9.0", "@tailwindcss/postcss": "^4.3.3", "lucide-react": "^1.55.0", "postcss": "^8.5.28", "postcss-selector-parser": "^7.1.6", "postcss-value-parser": "^4.2.0", "tailwindcss": "^4.3.3", "zod": "4.6.5" }, "peerDependencies": { "react": ">=19 <20", "react-dom": ">=19 <20" } }, "sha512-n1Ca/M/CkPaWMYUVDBiPyjjWXlo1ykBSEhP/oGiD249Ycqrk1W+3qM5cwq2kQOzuIUMnJsS5HYIDV1Nw7qHOeA=="],
 
     "@tailwindcss/node": ["@tailwindcss/node@4.3.3", "", { "dependencies": { "@jridgewell/remapping": "^2.3.5", "enhanced-resolve": "^5.24.1", "jiti": "^2.7.0", "lightningcss": "1.32.0", "magic-string": "^0.30.21", "source-map-js": "^1.2.1", "tailwindcss": "4.3.3" } }, "sha512-/T8IKEsf9VTU6tLjgC7+sv2mOPtQxzE2jMw7u4Tt40Tx+QSZxpzh95/H6cMKoja9XuW7iMdLJYBB0o9G1CaAgg=="],
 

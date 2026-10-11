@@ -1,6 +1,6 @@
 # 官方插件仓库
 
-此仓库独立维护官方市场索引与插件，不属于宿主 workspace。使用固定的公开 SDK 0.3.0，不引用相邻源码。交流和文档默认中文。
+此仓库独立维护官方市场索引与插件，不属于宿主 workspace。使用固定的公开 SDK 0.3.2，不引用相邻源码。交流和文档默认中文。
 
 - `plugins/translate`、`plugins/quick-notes` 分别管理版本；ID 是业务数据命名空间，不随意改名。
 - 修改后运行 `bun run check`、`bun run test`、`bun run pack` 和 `bun run index:check`；插件必须含预构建 dist。

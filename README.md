@@ -5,7 +5,7 @@
 - `plugins/translate`：译文，使用宿主模型翻译。
 - `plugins/quick-notes`：随手记，使用宿主 KV 存储。
 - `marketplace.json`：仅列已发布并验收的插件。默认索引为 https://raw.githubusercontent.com/semicoder-dev/malatang-plugins/main/marketplace.json 。
-- `scripts/tasks.ts`：通过固定的公开 SDK 0.3.0 检查、构建和打包，产生归档、SHA-256 与候选条目。
+- `scripts/tasks.ts`：通过固定的公开 SDK 0.3.2 检查、构建和打包，产生归档、SHA-256 与候选条目。
 - `tests/translate-models.html`：迁入的离线浏览器回归；通过 `bun scripts/browser-fixture.ts` 生成 `artifacts/browser/index.html`，直接用浏览器打开（无需额外服务），覆盖模型选择、空模型与账号断开；不发送真实模型请求。
 
 ## 开发
@@ -24,7 +24,7 @@ bun run index:check
 
 ## 发布与上架
 
-以下动作必须另获发布授权，本次未执行。
+以下动作需要当次发布授权；已公开标签和归档不可覆盖。
 
 1. 确认需要发布的插件版本、源码与验收；每个插件独立版本，不随宿主升版。标签为 `translate-v<version>` 或 `quick-notes-v<version>`。
 2. 配置真实公开仓库和 Actions 权限；标签触发 `release.yml`，固定 Bun 和 SDK，检查、测试、重新打包后发布不可变 Release 归档及候选 JSON。已公开版本不覆盖。
