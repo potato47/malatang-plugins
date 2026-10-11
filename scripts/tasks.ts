@@ -18,7 +18,7 @@ for (const id of ids) {
     const sha256 = createHash("sha256").update(await Bun.file(`artifacts/${name}`).bytes()).digest("hex");
     const { id: pluginId, name: title, description, icon, color, sdkVersion } = pkg.malatang;
     const entry = { id: pluginId, packageName: pkg.name, name: title, description, icon, color, sdkVersion, version: pkg.version,
-      url: `https://github.com/potato47/malatang-plugins/releases/download/${id}-v${pkg.version}/${name}`, sha256 };
+      url: `https://github.com/semicoder-dev/malatang-plugins/releases/download/${id}-v${pkg.version}/${name}`, sha256 };
     await Bun.write(`artifacts/${id}.json`, JSON.stringify(entry, null, 2) + "\n");
     await Bun.write(`artifacts/${name}.sha256`, `${sha256}  ${name}\n`);
     console.log(`Prepared ${name}; candidate index entry artifacts/${id}.json (not published)`);

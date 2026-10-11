@@ -9,7 +9,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   release:
-    if: github.repository == 'potato47/malatang-plugins'
+    if: github.repository == 'semicoder-dev/malatang-plugins'
     runs-on: ubuntu-latest
     permissions:
       contents: write

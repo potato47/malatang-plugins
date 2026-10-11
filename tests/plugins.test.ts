@@ -18,5 +18,5 @@ test("translation stores preferences and delegates to the selected host model", 
 test("official index has no unpublished archive entries", async () => {
   const index = indexSchema.parse(await Bun.file("marketplace.json").json());
   expect(index.schemaVersion).toBe(1);
-  for (const entry of index.plugins) expect(entry.url).toBe(`https://github.com/potato47/malatang-plugins/releases/download/${entry.id}-v${entry.version}/${entry.id}-${entry.version}.tgz`);
+  for (const entry of index.plugins) expect(entry.url).toBe(`https://github.com/semicoder-dev/malatang-plugins/releases/download/${entry.id}-v${entry.version}/${entry.id}-${entry.version}.tgz`);
 });

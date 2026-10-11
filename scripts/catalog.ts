@@ -13,7 +13,7 @@ if (import.meta.main) {
   const index = indexSchema.parse(await Bun.file("marketplace.json").json());
   if (action === "promote") {
     const entry = entrySchema.parse(await Bun.file(process.argv[3]!).json());
-    const expectedURL = `https://github.com/potato47/malatang-plugins/releases/download/${entry.id}-v${entry.version}/${entry.id}-${entry.version}.tgz`;
+    const expectedURL = `https://github.com/semicoder-dev/malatang-plugins/releases/download/${entry.id}-v${entry.version}/${entry.id}-${entry.version}.tgz`;
     if (entry.url !== expectedURL) throw new Error("候选条目不是官方固定版本归档");
     const response = await fetch(entry.url, { signal: AbortSignal.timeout(120000) });
     if (!response.ok) throw new Error(`公开归档未就绪：${response.status}`);
