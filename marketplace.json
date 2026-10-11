@@ -3,6 +3,18 @@
   "name": "官方插件市场",
   "plugins": [
     {
+      "id": "quick-notes",
+      "packageName": "@semicoder/malatang-example-quick-notes",
+      "name": "随手记",
+      "description": "记录想法并保存到本机，无需配置模型。",
+      "icon": "记",
+      "color": "#6e8169",
+      "version": "0.1.0",
+      "sdkVersion": "0.3",
+      "url": "https://github.com/potato47/malatang-plugins/releases/download/quick-notes-v0.1.0/quick-notes-0.1.0.tgz",
+      "sha256": "14b55f3722be87a3674cb7bdf0c41408cd8fbe1808de57cdf8dfc6d329cb56e0"
+    },
+    {
       "id": "translate",
       "packageName": "@semicoder/malatang-plugin-translate",
       "name": "译文",
