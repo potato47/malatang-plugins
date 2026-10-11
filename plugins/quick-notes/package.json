@@ -1,0 +1,24 @@
+{
+  "name": "@semicoder/malatang-example-quick-notes",
+  "version": "0.1.0",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "@semicoder/malatang-sdk": "0.3.0"
+  },
+  "malatang": {
+    "schemaVersion": 1,
+    "id": "quick-notes",
+    "name": "随手记",
+    "description": "记录想法并保存到本机，无需配置模型。",
+    "icon": "记",
+    "color": "#6e8169",
+    "sdkVersion": "0.3",
+    "frontend": "dist/client.js",
+    "keepAlive": true,
+    "styles": "dist/client.css"
+  },
+  "private": true
+}
