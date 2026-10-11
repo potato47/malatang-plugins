@@ -9,10 +9,10 @@
       "description": "记录想法并保存到本机，无需配置模型。",
       "icon": "记",
       "color": "#6e8169",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "sdkVersion": "0.3",
-      "url": "https://github.com/semicoder-dev/malatang-plugins/releases/download/quick-notes-v0.1.0/quick-notes-0.1.0.tgz",
-      "sha256": "14b55f3722be87a3674cb7bdf0c41408cd8fbe1808de57cdf8dfc6d329cb56e0"
+      "url": "https://github.com/semicoder-dev/malatang-plugins/releases/download/quick-notes-v0.1.1/quick-notes-0.1.1.tgz",
+      "sha256": "fcfd8422211093d17fa9cdcc7ced2a06785cc93bcea28337ee9c877b41916da6"
     },
     {
       "id": "translate",
