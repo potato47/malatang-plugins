@@ -1,16 +1,10 @@
-# 麻辣烫官方插件与市场
+# fn 官方插件与市场
 
-[独立官方仓库](https://github.com/semicoder-dev/malatang-plugins)，宿主不携带此处任何插件。翻译和随手记 0.1.1 已发布归档并上架，使用固定公开 SDK 0.3.2，manifest 保持 0.3。组织市场由麻辣烫 0.4.3 默认使用；完整应用验收见宿主发布记录。
+**本地开发、尚未发布。** 本仓库独立维护译文（translate）与随手记（quick-notes），宿主不携带插件，也不依赖本仓库构建。包名为 `@semicoder/fn-plugin-translate` 和 `@semicoder/fn-example-quick-notes`；版本保持 0.1.1，清单字段为 `fn`，sdkVersion 保持 0.3。
 
-- `plugins/translate`：译文，使用宿主模型翻译。
-- `plugins/quick-notes`：随手记，使用宿主 KV 存储。
-- `marketplace.json`：仅列已发布并验收的插件。默认索引为 https://raw.githubusercontent.com/semicoder-dev/malatang-plugins/main/marketplace.json 。
-- `scripts/tasks.ts`：通过固定的公开 SDK 0.3.2 检查、构建和打包，产生归档、SHA-256 与候选条目。
-- `tests/translate-models.html`：迁入的离线浏览器回归；通过 `bun scripts/browser-fixture.ts` 生成 `artifacts/browser/index.html`，直接用浏览器打开（无需额外服务），覆盖模型选择、空模型与账号断开；不发送真实模型请求。
+## 独立开发
 
-## 开发
-
-使用 Bun 1.4.3。仓库独立安装公开依赖，不需要相邻麻辣烫源码。
+使用 Bun 1.4.3。本仓库携带经过校验的固定 SDK 归档 `vendor/fn-sdk.tgz`，来源和哈希见[快照说明](vendor/README.md)。新 `@semicoder/fn-sdk` 尚未发布 npm，安装不需要相邻源码。
 
 ```sh
 bun install --frozen-lockfile --ignore-scripts
@@ -20,20 +14,17 @@ bun run pack
 bun run index:check
 ```
 
-可使用 `bun run pack translate` 或 `bun run pack quick-notes` 单独打包。候选产物在 `artifacts/`，通过宿主“从地址安装”选择 `.tgz` 验收。插件是可信本地代码。
+`artifacts/translate-0.1.1.tgz`、`artifacts/quick-notes-0.1.1.tgz` 为本地候选归档，包含清单与完整 dist。通过 fn 应用中心从地址安装；翻译调用宿主模型，随手记使用宿主 KV。
 
-## 发布与上架
+## 市场与后续发布
 
-以下动作需要当次发布授权；已公开标签和归档不可覆盖。
+`marketplace.json` 暂为空，不登记未发布归档。`pack` 生成候选条目与 SHA-256，不自动上架。目标地址为 `https://raw.githubusercontent.com/semicoder-dev/fn-plugins/main/marketplace.json`，新仓库名称和地址尚未落地；当前 Git remote 保持真实旧地址。
 
-1. 确认需要发布的插件版本、源码与验收；每个插件独立版本，不随宿主升版。标签为 `translate-v<version>` 或 `quick-notes-v<version>`。
-2. 配置真实公开仓库和 Actions 权限；标签触发 `release.yml`，固定 Bun 和 SDK，检查、测试、重新打包后发布不可变 Release 归档及候选 JSON。已公开版本不覆盖。
-3. 工作流从公开 URL 下载归档验证 SHA-256，再在当前 main 上运行 `bun scripts/catalog.ts promote artifacts/<id>.json`，创建索引 PR。PR 合并前检查已有较新版本，处理并发变更后重新验收，禁止回退或同版本替换。
-4. 合并索引 PR 后官方 Raw 地址可发现版本；再从干净宿主实际浏览、安装和更新，并记录公开产物哈希、工作流、索引提交及官网同步。
+后续获得发布授权后：完成 GitHub 更名和新 SDK 公开验收，将依赖切回固定 npm 版本；分别准备两个插件的新版本，不复用历史标签或覆盖旧归档；通过 `<plugin-id>-v<version>` 发布，独立验收公开归档后运行 `catalog.ts promote` 并通过 PR 更新索引。宿主、SDK、插件、官网分别验收，公开前同步文档。
 
-工作流默认令牌创建的 PR 不保证自动触发其他工作流，合并前需要手动运行 CI；仓库若禁止 Actions 创建 PR，可在本地按相同步骤创建。发布失败不可改用覆盖已公开标签，已发布但未上架的归档可手动恢复索引步骤。
+## 历史发行证据（原包名与地址）
 
-市场 v1 契约：顶层 `schemaVersion:1/name/plugins`；每项 `id/packageName/name/description/icon/color/version/sdkVersion/url/sha256`。版本为稳定 `x.y.z`，每个 ID 仅一个版本；URL 为 HTTPS 预构建归档，SHA-256 为实际归档的 64 位小写十六进制。包名、ID、版本和 SDK 必须与归档一致，后端入口不作为浏览器资源公开。
+以下历史标签与归档保持不变，不代表 fn 已发布。
 
 ## 组织首次发行（2026-10-11）
 

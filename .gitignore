@@ -3,3 +3,7 @@ plugins/*/dist/
 artifacts/
 *.tgz
 .DS_Store
+
+# Fixed SDK snapshot for independent development before npm publication.
+!vendor/
+!vendor/*.tgz

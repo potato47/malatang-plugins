@@ -1,8 +1,8 @@
 import "./styles.css";
 import styles from "./page.module.css";
 import React, { useEffect, useRef, useState } from "react";
-import { createPluginClient } from "@semicoder/malatang-sdk/client";
-import type { ModelInfo, ModelRun } from "@semicoder/malatang-sdk/types";
+import { createPluginClient } from "@semicoder/fn-sdk/client";
+import type { ModelInfo, ModelRun } from "@semicoder/fn-sdk/types";
 import {
   Alert,
   Badge,
@@ -20,7 +20,7 @@ import {
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@semicoder/malatang-sdk/ui";
+} from "@semicoder/fn-sdk/ui";
 const client = createPluginClient("translate");
 const sample =
   "Good tools disappear into the work. They give ideas room to grow, and make the complicated feel simple.";

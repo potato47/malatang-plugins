@@ -3,9 +3,9 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "malatang-plugins",
+      "name": "fn-plugins",
       "devDependencies": {
-        "@semicoder/malatang-sdk": "0.3.2",
+        "@semicoder/fn-sdk": "file:./vendor/fn-sdk.tgz",
         "@types/bun": "1.4.0",
         "@types/react": "19.2.17",
         "@types/react-dom": "19.2.3",
@@ -16,17 +16,17 @@
       },
     },
     "plugins/quick-notes": {
-      "name": "@semicoder/malatang-example-quick-notes",
+      "name": "@semicoder/fn-example-quick-notes",
       "version": "0.1.1",
       "devDependencies": {
-        "@semicoder/malatang-sdk": "0.3.2",
+        "@semicoder/fn-sdk": "file:../../vendor/fn-sdk.tgz",
       },
     },
     "plugins/translate": {
-      "name": "@semicoder/malatang-plugin-translate",
+      "name": "@semicoder/fn-plugin-translate",
       "version": "0.1.1",
       "devDependencies": {
-        "@semicoder/malatang-sdk": "0.3.2",
+        "@semicoder/fn-sdk": "file:../../vendor/fn-sdk.tgz",
       },
     },
   },
@@ -161,11 +161,11 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.64.5", "", { "os": "win32", "cpu": "x64" }, "sha512-IhV6ew/DuzUWwHaYmlh7MrPCV3lKFUq/amTEwysi4r/mwNPAEfAMh5dYWeTSPTeMy2pFHGMEWYtPkHzfX3tG5A=="],
 
-    "@semicoder/malatang-example-quick-notes": ["@semicoder/malatang-example-quick-notes@workspace:plugins/quick-notes"],
+    "@semicoder/fn-example-quick-notes": ["@semicoder/fn-example-quick-notes@workspace:plugins/quick-notes"],
 
-    "@semicoder/malatang-plugin-translate": ["@semicoder/malatang-plugin-translate@workspace:plugins/translate"],
+    "@semicoder/fn-plugin-translate": ["@semicoder/fn-plugin-translate@workspace:plugins/translate"],
 
-    "@semicoder/malatang-sdk": ["@semicoder/malatang-sdk@0.3.2", "", { "dependencies": { "@base-ui/react": "^1.9.0", "@tailwindcss/postcss": "^4.3.3", "lucide-react": "^1.55.0", "postcss": "^8.5.28", "postcss-selector-parser": "^7.1.6", "postcss-value-parser": "^4.2.0", "tailwindcss": "^4.3.3", "zod": "4.6.5" }, "peerDependencies": { "react": ">=19 <20", "react-dom": ">=19 <20" } }, "sha512-n1Ca/M/CkPaWMYUVDBiPyjjWXlo1ykBSEhP/oGiD249Ycqrk1W+3qM5cwq2kQOzuIUMnJsS5HYIDV1Nw7qHOeA=="],
+    "@semicoder/fn-sdk": ["@semicoder/fn-sdk@./vendor/fn-sdk.tgz", { "dependencies": { "@base-ui/react": "^1.9.0", "@tailwindcss/postcss": "^4.3.3", "lucide-react": "^1.55.0", "postcss": "^8.5.28", "postcss-selector-parser": "^7.1.6", "postcss-value-parser": "^4.2.0", "tailwindcss": "^4.3.3", "zod": "4.6.5" }, "peerDependencies": { "react": ">=19 <20", "react-dom": ">=19 <20" } }, "sha512-BZ/xzuy00SrOg4eGRtT2pk1bscm08pJEhJ/VUaRfv56ieHdLqvWbEOh9pX2bd+AlVRmK9tWzakAFllcYtrC/4Q=="],
 
     "@tailwindcss/node": ["@tailwindcss/node@4.3.3", "", { "dependencies": { "@jridgewell/remapping": "^2.3.5", "enhanced-resolve": "^5.24.1", "jiti": "^2.7.0", "lightningcss": "1.32.0", "magic-string": "^0.30.21", "source-map-js": "^1.2.1", "tailwindcss": "4.3.3" } }, "sha512-/T8IKEsf9VTU6tLjgC7+sv2mOPtQxzE2jMw7u4Tt40Tx+QSZxpzh95/H6cMKoja9XuW7iMdLJYBB0o9G1CaAgg=="],
 
@@ -336,6 +336,10 @@
     "vite": ["vite@7.1.3", "", { "dependencies": { "esbuild": "^0.25.0", "fdir": "^6.5.0", "picomatch": "^4.0.3", "postcss": "^8.5.6", "rollup": "^4.43.0", "tinyglobby": "^0.2.14" }, "optionalDependencies": { "fsevents": "~2.3.3" }, "peerDependencies": { "@types/node": "^20.19.0 || >=22.12.0", "jiti": ">=1.21.0", "less": "^4.0.0", "lightningcss": "^1.21.0", "sass": "^1.70.0", "sass-embedded": "^1.70.0", "stylus": ">=0.54.8", "sugarss": "^5.0.0", "terser": "^5.16.0", "tsx": "^4.8.1", "yaml": "^2.4.2" }, "optionalPeers": ["@types/node", "jiti", "less", "lightningcss", "sass", "sass-embedded", "stylus", "sugarss", "terser", "tsx", "yaml"], "bin": { "vite": "bin/vite.js" } }, "sha512-OOUi5zjkDxYrKhTV3V7iKsoS37VUM7v40+HuwEmcrsf11Cdx9y3DIr2Px6liIcZFwt3XSRpQvFpL3WVy7ApkGw=="],
 
     "zod": ["zod@4.6.5", "", {}, "sha512-v5l/aFXZQeai4awLbOpSoHecE9UiMrnfx75tEXLjNonXVARxQ5mOeipTjROUchszUNCqnE+hqAMujRsRHsut2Q=="],
+
+    "@semicoder/fn-example-quick-notes/@semicoder/fn-sdk": ["@semicoder/fn-sdk@../../vendor/fn-sdk.tgz", { "dependencies": { "@base-ui/react": "^1.9.0", "@tailwindcss/postcss": "^4.3.3", "lucide-react": "^1.55.0", "postcss": "^8.5.28", "postcss-selector-parser": "^7.1.6", "postcss-value-parser": "^4.2.0", "tailwindcss": "^4.3.3", "zod": "4.6.5" }, "peerDependencies": { "react": ">=19 <20", "react-dom": ">=19 <20" } }, "sha512-BZ/xzuy00SrOg4eGRtT2pk1bscm08pJEhJ/VUaRfv56ieHdLqvWbEOh9pX2bd+AlVRmK9tWzakAFllcYtrC/4Q=="],
+
+    "@semicoder/fn-plugin-translate/@semicoder/fn-sdk": ["@semicoder/fn-sdk@../../vendor/fn-sdk.tgz", { "dependencies": { "@base-ui/react": "^1.9.0", "@tailwindcss/postcss": "^4.3.3", "lucide-react": "^1.55.0", "postcss": "^8.5.28", "postcss-selector-parser": "^7.1.6", "postcss-value-parser": "^4.2.0", "tailwindcss": "^4.3.3", "zod": "4.6.5" }, "peerDependencies": { "react": ">=19 <20", "react-dom": ">=19 <20" } }, "sha512-BZ/xzuy00SrOg4eGRtT2pk1bscm08pJEhJ/VUaRfv56ieHdLqvWbEOh9pX2bd+AlVRmK9tWzakAFllcYtrC/4Q=="],
 
     "@tailwindcss/oxide-wasm32-wasi/@emnapi/core": ["@emnapi/core@1.11.3", "", { "dependencies": { "@emnapi/wasi-threads": "1.2.3", "tslib": "^2.4.0" }, "bundled": true }, "sha512-zLpS5asjEb7lq8jYLq37N6XKaE41DIexlY1rF/z4/tIl3wo13Sqm28fRyfIsKZD+NZ8mM5RoKkpW/rBcuoSZSg=="],
 

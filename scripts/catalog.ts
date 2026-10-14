@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { z } from "@semicoder/malatang-sdk/runtime";
+import { z } from "@semicoder/fn-sdk/runtime";
 export const entrySchema = z.strictObject({
   id: z.string().regex(/^[a-z][a-z0-9-]{1,63}$/).refine(id => !["models", "plugins", "settings"].includes(id)),
   packageName: z.string().max(214).regex(/^(?:@[a-z0-9._-]+\/)?[a-z0-9][a-z0-9._-]*$/),
@@ -13,7 +13,7 @@ if (import.meta.main) {
   const index = indexSchema.parse(await Bun.file("marketplace.json").json());
   if (action === "promote") {
     const entry = entrySchema.parse(await Bun.file(process.argv[3]!).json());
-    const expectedURL = `https://github.com/semicoder-dev/malatang-plugins/releases/download/${entry.id}-v${entry.version}/${entry.id}-${entry.version}.tgz`;
+    const expectedURL = `https://github.com/semicoder-dev/fn-plugins/releases/download/${entry.id}-v${entry.version}/${entry.id}-${entry.version}.tgz`;
     if (entry.url !== expectedURL) throw new Error("候选条目不是官方固定版本归档");
     const response = await fetch(entry.url, { signal: AbortSignal.timeout(120000) });
     if (!response.ok) throw new Error(`公开归档未就绪：${response.status}`);

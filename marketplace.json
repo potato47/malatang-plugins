@@ -1,30 +1,5 @@
 {
   "schemaVersion": 1,
-  "name": "官方插件市场",
-  "plugins": [
-    {
-      "id": "quick-notes",
-      "packageName": "@semicoder/malatang-example-quick-notes",
-      "name": "随手记",
-      "description": "记录想法并保存到本机，无需配置模型。",
-      "icon": "记",
-      "color": "#6e8169",
-      "version": "0.1.1",
-      "sdkVersion": "0.3",
-      "url": "https://github.com/semicoder-dev/malatang-plugins/releases/download/quick-notes-v0.1.1/quick-notes-0.1.1.tgz",
-      "sha256": "fcfd8422211093d17fa9cdcc7ced2a06785cc93bcea28337ee9c877b41916da6"
-    },
-    {
-      "id": "translate",
-      "packageName": "@semicoder/malatang-plugin-translate",
-      "name": "译文",
-      "description": "让意思抵达，让表达自然。一个轻巧的 AI 翻译工作台。",
-      "icon": "文",
-      "color": "#cf633c",
-      "version": "0.1.1",
-      "sdkVersion": "0.3",
-      "url": "https://github.com/semicoder-dev/malatang-plugins/releases/download/translate-v0.1.1/translate-0.1.1.tgz",
-      "sha256": "d42181bd290f938170dd7209dd6358f731017c6ac5e05cafaa4262e706a45077"
-    }
-  ]
+  "name": "fn 官方插件市场",
+  "plugins": []
 }

@@ -1,10 +1,10 @@
-import { UIProvider } from "@semicoder/malatang-sdk/ui";
-import "@semicoder/malatang-sdk/ui.css";
-import "@semicoder/malatang-sdk/theme.css";
+import { UIProvider } from "@semicoder/fn-sdk/ui";
+import "@semicoder/fn-sdk/ui.css";
+import "@semicoder/fn-sdk/theme.css";
 // Runs only on FIA's development server, with no real account or model calls.
 import React, { act } from "react";
 import { createRoot } from "react-dom/client";
-import type { HostBridge, ModelInfo, ModelRun } from "@semicoder/malatang-sdk/types";
+import type { HostBridge, ModelInfo, ModelRun } from "@semicoder/fn-sdk/types";
 
 
 Object.assign(globalThis, { IS_REACT_ACT_ENVIRONMENT: true });
@@ -57,7 +57,7 @@ const bridge: HostBridge = {
   },
   onReconnect: () => () => {},
 };
-Object.assign(globalThis, { __MALATANG_BRIDGE__: bridge });
+Object.assign(globalThis, { __FN_BRIDGE__: bridge });
 const { default: Translate } = await import("../plugins/translate/src/client");
 const root = createRoot(document.getElementById("fixture")!);
 const results: string[] = [];

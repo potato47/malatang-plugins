@@ -1,5 +1,5 @@
 {
-  "name": "@semicoder/malatang-plugin-translate",
+  "name": "@semicoder/fn-plugin-translate",
   "version": "0.1.1",
   "private": true,
   "files": [
@@ -7,9 +7,9 @@
   ],
   "type": "module",
   "devDependencies": {
-    "@semicoder/malatang-sdk": "0.3.2"
+    "@semicoder/fn-sdk": "file:../../vendor/fn-sdk.tgz"
   },
-  "malatang": {
+  "fn": {
     "schemaVersion": 1,
     "id": "translate",
     "name": "译文",

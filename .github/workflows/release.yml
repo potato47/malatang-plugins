@@ -9,7 +9,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   release:
-    if: github.repository == 'semicoder-dev/malatang-plugins'
+    if: github.repository == 'semicoder-dev/fn-plugins'
     runs-on: ubuntu-latest
     permissions:
       contents: write
