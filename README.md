@@ -1,6 +1,6 @@
 # fn 官方插件与市场
 
-本仓库独立维护译文（translate）与随手记（quick-notes），宿主不携带插件，也不依赖本仓库构建。当前发行候选为 0.1.2，包名为 `@semicoder/fn-plugin-translate` 和 `@semicoder/fn-example-quick-notes`；清单字段为 `fn`，sdkVersion 保持 0.3。
+本仓库独立维护译文（translate）与随手记（quick-notes），宿主不携带插件，也不依赖本仓库构建。当前公开版本为 0.1.2，包名为 `@semicoder/fn-plugin-translate` 和 `@semicoder/fn-example-quick-notes`；清单字段为 `fn`，sdkVersion 保持 0.3。
 
 ## 独立开发
 
@@ -20,7 +20,15 @@ bun run index:check
 
 官方索引为 `https://raw.githubusercontent.com/semicoder-dev/fn-plugins/main/marketplace.json`。`pack` 只生成候选条目与 SHA-256，不自动上架。新版本必须通过 `<plugin-id>-v<version>` 发布，公开归档验收后运行 `catalog.ts promote` 并通过 PR 更新索引；不得登记未公开文件或覆盖历史归档。
 
-GitHub 仓库已更名为 `semicoder-dev/fn-plugins`，remote 与 About 已同步。SDK 公开归档、实际 OIDC 与独立消费须先验收，再发行两个插件。Actions 无法创建 PR 时，维护者从生成的 catalog 分支补建，CI 通过后合并；不放宽仓库保护。
+GitHub 仓库已更名为 `semicoder-dev/fn-plugins`，remote 与 About 已同步。SDK 0.3.4 的公开归档、实际 OIDC 与独立消费已先验收，两个 0.1.2 插件随后发行。Actions 无法创建 PR 时，维护者从生成的 catalog 分支补建，CI 通过后合并；不放宽仓库保护。
+
+## fn 首次发行（2026-10-15）
+
+- [译文 0.1.2](https://github.com/semicoder-dev/fn-plugins/releases/tag/translate-v0.1.2)：来源 `e6eebdac3f30ece19bd12ca5f336a91651ddcead`，[流程 38690288648](https://github.com/semicoder-dev/fn-plugins/actions/runs/38690288648) 成功；42,733 字节，SHA-256 `73dc775fb7e5b5d2125c1d01ed79f9a854bc8c6e54f6695cea421f17921bc938`。
+- [随手记 0.1.2](https://github.com/semicoder-dev/fn-plugins/releases/tag/quick-notes-v0.1.2)：来源 `11f6b6814166f8ff147a8145031f8052616122ef`，[流程 38690554518](https://github.com/semicoder-dev/fn-plugins/actions/runs/38690554518) 成功；4,588 字节，SHA-256 `ba05a8bba6c35de9b32a488d55bbdf9e928e5aea5b780fdbdc6964080ffdccff`。
+- 两个 Release 各三个附件匿名校验大小与摘要，包名、fn 清单、ID、版本、完整 dist 和新运行时标识均通过。本地 check/test/pack/index:check 及新缓存独立源码安装/check/pack/index:check 通过，固定公开 SDK 0.3.4，不依赖相邻目录。
+- 市场 PR [#8](https://github.com/semicoder-dev/fn-plugins/pull/8) / [#9](https://github.com/semicoder-dev/fn-plugins/pull/9) 经 CI 合并，索引提交 `7a47ae1`。公开索引与验收候选条目一致；未登记旧归档或未公开版本。
+- 公开 fn 0.4.4 全新实例从市场安装两个插件，均 active；页面、KV 保存/刷新、正常退出与重启持久化通过。fn Dev 使用公开译文归档和用户已授权的 GPT-6-Luna 完成真实调用，demo:false。官网按同批产物同步并单独部署验收。
 
 ## 历史发行证据（原包名与地址）
 
