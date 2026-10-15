@@ -3,14 +3,23 @@ import { createHash } from "node:crypto";
 import translate from "../plugins/translate/src/backend";
 import { indexSchema } from "../scripts/catalog";
 
-test("independent SDK dependency matches its recorded archive", async () => {
+test("independent plugins share the exact installed registry SDK", async () => {
+  const root = await Bun.file("package.json").json();
+  const version = root.devDependencies["@semicoder/fn-sdk"];
+  expect(version).toMatch(/^\d+\.\d+\.\d+$/);
+  const installed = await Bun.file(new URL("./package.json", import.meta.resolve("@semicoder/fn-sdk/plugin"))).json();
+  expect(installed.name).toBe("@semicoder/fn-sdk");
+  expect(installed.version).toBe(version);
+  for (const path of ["plugins/translate/package.json", "plugins/quick-notes/package.json"]) {
+    const pkg = await Bun.file(path).json();
+    expect(pkg.devDependencies[installed.name]).toBe(version);
+  }
+});
+
+test("historical SDK archive still matches its original provenance", async () => {
   const snapshot = await Bun.file("vendor/snapshot.json").json();
   const digest = createHash("sha256").update(await Bun.file("vendor/fn-sdk.tgz").bytes()).digest("hex");
   expect(digest).toBe(snapshot.sha256);
-  for (const [path, dependency] of [["package.json", "file:./vendor/fn-sdk.tgz"], ["plugins/translate/package.json", "file:../../vendor/fn-sdk.tgz"], ["plugins/quick-notes/package.json", "file:../../vendor/fn-sdk.tgz"]]) {
-    const pkg = await Bun.file(path!).json();
-    expect(pkg.devDependencies[snapshot.packageName]).toBe(dependency);
-  }
 });
 
 test("translation stores preferences and delegates to the selected host model", async () => {

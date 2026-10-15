@@ -1,10 +1,10 @@
 # fn 官方插件与市场
 
-**本地开发、尚未发布。** 本仓库独立维护译文（translate）与随手记（quick-notes），宿主不携带插件，也不依赖本仓库构建。包名为 `@semicoder/fn-plugin-translate` 和 `@semicoder/fn-example-quick-notes`；版本保持 0.1.1，清单字段为 `fn`，sdkVersion 保持 0.3。
+本仓库独立维护译文（translate）与随手记（quick-notes），宿主不携带插件，也不依赖本仓库构建。当前发行候选为 0.1.2，包名为 `@semicoder/fn-plugin-translate` 和 `@semicoder/fn-example-quick-notes`；清单字段为 `fn`，sdkVersion 保持 0.3。
 
 ## 独立开发
 
-使用 Bun 1.4.3。本仓库携带经过校验的固定 SDK 归档 `vendor/fn-sdk.tgz`，来源和哈希见[快照说明](vendor/README.md)。新 `@semicoder/fn-sdk` 尚未发布 npm，安装不需要相邻源码。
+使用 Bun 1.4.3，根包与两个插件均固定消费公开 `@semicoder/fn-sdk@0.3.4`，不依赖相邻宿主源码。[vendor 快照](vendor/README.md)仅保留更名阶段历史，不参与当前安装。
 
 ```sh
 bun install --frozen-lockfile --ignore-scripts
@@ -14,13 +14,13 @@ bun run pack
 bun run index:check
 ```
 
-`artifacts/translate-0.1.1.tgz`、`artifacts/quick-notes-0.1.1.tgz` 为本地候选归档，包含清单与完整 dist。通过 fn 应用中心从地址安装；翻译调用宿主模型，随手记使用宿主 KV。
+`artifacts/translate-0.1.2.tgz`、`artifacts/quick-notes-0.1.2.tgz` 为本地候选归档，包含清单与完整 dist。通过 fn 应用中心从地址安装；翻译调用宿主模型，随手记使用宿主 KV。
 
-## 市场与后续发布
+## 市场与发布
 
-`marketplace.json` 暂为空，不登记未发布归档。`pack` 生成候选条目与 SHA-256，不自动上架。目标地址为 `https://raw.githubusercontent.com/semicoder-dev/fn-plugins/main/marketplace.json`，新仓库名称和地址尚未落地；当前 Git remote 保持真实旧地址。
+官方索引为 `https://raw.githubusercontent.com/semicoder-dev/fn-plugins/main/marketplace.json`。`pack` 只生成候选条目与 SHA-256，不自动上架。新版本必须通过 `<plugin-id>-v<version>` 发布，公开归档验收后运行 `catalog.ts promote` 并通过 PR 更新索引；不得登记未公开文件或覆盖历史归档。
 
-后续获得发布授权后：完成 GitHub 更名和新 SDK 公开验收，将依赖切回固定 npm 版本；分别准备两个插件的新版本，不复用历史标签或覆盖旧归档；通过 `<plugin-id>-v<version>` 发布，独立验收公开归档后运行 `catalog.ts promote` 并通过 PR 更新索引。宿主、SDK、插件、官网分别验收，公开前同步文档。
+GitHub 仓库已更名为 `semicoder-dev/fn-plugins`，remote 与 About 已同步。SDK 公开归档、实际 OIDC 与独立消费须先验收，再发行两个插件。Actions 无法创建 PR 时，维护者从生成的 catalog 分支补建，CI 通过后合并；不放宽仓库保护。
 
 ## 历史发行证据（原包名与地址）
 

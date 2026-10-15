@@ -1,12 +1,12 @@
 {
   "name": "@semicoder/fn-example-quick-notes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "files": [
     "dist"
   ],
   "type": "module",
   "devDependencies": {
-    "@semicoder/fn-sdk": "file:../../vendor/fn-sdk.tgz"
+    "@semicoder/fn-sdk": "0.3.4"
   },
   "fn": {
     "schemaVersion": 1,
