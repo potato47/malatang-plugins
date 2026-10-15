@@ -1,5 +1,18 @@
 {
   "schemaVersion": 1,
   "name": "fn 官方插件市场",
-  "plugins": []
+  "plugins": [
+    {
+      "id": "translate",
+      "packageName": "@semicoder/fn-plugin-translate",
+      "name": "译文",
+      "description": "让意思抵达，让表达自然。一个轻巧的 AI 翻译工作台。",
+      "icon": "文",
+      "color": "#cf633c",
+      "version": "0.1.2",
+      "sdkVersion": "0.3",
+      "url": "https://github.com/semicoder-dev/fn-plugins/releases/download/translate-v0.1.2/translate-0.1.2.tgz",
+      "sha256": "73dc775fb7e5b5d2125c1d01ed79f9a854bc8c6e54f6695cea421f17921bc938"
+    }
+  ]
 }
